@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defualt-zone: http://localhost:8761/
+
+spring:
+  application:
+    name: CART-SERVICE
+# to connect static list of servers.
+ribbon:  eureka:    enabled: false
+
+PRODUCT-SERVICE:
+  ribbon:
+   listOfServers: http://localhost:8086 , http://localhost:8087 , http://localhost:9086

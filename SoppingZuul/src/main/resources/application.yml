@@ -1,0 +1,25 @@
+server:
+  port: 9000
+
+eureka:
+  client:
+    service-url:
+      defualt-zone: http://localhost:8761/
+
+spring:
+  application:
+    name: ZUUL-API
+
+   
+zuul:
+  prefix: /online-product
+  routes: 
+    PRODUCT-SERVICE:
+      path: /product-api/**
+      service-id: PRODUCT-SERVICE
+    CART-SERVICE:
+      path: /cart-api/**
+      service-id: CART-SERVICE
+    ORDER-SERVICE:
+      path: /order-api/**
+      service-id: ORDER-SERVICE
